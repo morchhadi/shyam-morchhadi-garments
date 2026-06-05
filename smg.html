@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        SHYAM MORCHHADI GARMENTS
+    </title>
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fff9f3;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ================================================= */
+        /* NAVBAR */
+        /* ================================================= */
+
+        nav {
+
+            width: 100%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background: #fdf7f0;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 999;
+
+            box-shadow: 0 3px 12px rgba(0, 0, 0, .05);
+        }
+
+        /* LOGO */
+
+        .logo-area {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+        }
+
+        .logo-area img {
+
+            width: 65px;
+
+            height: 65px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+        }
+
+        .logo-text {
+
+            font-size: 42px;
+
+            color: #8b5e34;
+
+            font-family: 'Cinzel', serif;
+
+            font-weight: 700;
+        }
+
+        /* NAV LINKS */
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 35px;
+        }
+
+        .nav-links a {
+
+            color: #7a4d27;
+
+            font-weight: 600;
+
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+
+            color: #d48d3b;
+        }
+
+        /* CART */
+
+        .cart-icon {
+
+            background: #d48d3b;
+
+            color: #fff;
+
+            padding: 14px 26px;
+
+            border-radius: 40px;
+
+            font-weight: 600;
+        }
+
+        /* ================================================= */
+        /* EMPTY CONTENT AREA */
+        /* ================================================= */
+
+        .custom-page-content {
+
+            min-height: 80vh;
+
+            padding: 120px 7%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .custom-page-box {
+
+            background: #fff;
+
+            width: 100%;
+
+            max-width: 900px;
+
+            padding: 80px 50px;
+
+            border-radius: 35px;
+
+            box-shadow: 0 10px 35px rgba(0, 0, 0, .06);
+        }
+
+        .custom-page-box h1 {
+
+            font-size: 58px;
+
+            color: #7a4d27;
+
+            font-family: 'Cinzel', serif;
+
+            margin-bottom: 20px;
+        }
+
+        .custom-page-box p {
+
+            color: #7b624f;
+
+            font-size: 18px;
+
+            line-height: 2;
+        }
+
+        /* ================================================= */
+        /* policyMain */
+        /* ================================================= */
+
+        .policyMain {
+            padding: 90px 7%;
+        }
+
+        .policyBox {
+            background: #fff;
+            padding: 50px;
+            border-radius: 30px;
+            margin-bottom: 45px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border-left: 8px solid #d48d3b;
+            transition: 0.4s;
+        }
+
+        .policyBox:hover {
+            transform: translateY(-5px);
+        }
+
+        .policyHeading {
+            font-size: 42px;
+            color: #7a4d27;
+            margin-bottom: 22px;
+            font-family: 'Cinzel', serif;
+        }
+
+        .policyText {
+            color: #7b624f;
+            line-height: 2;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .policyList {
+            padding-left: 20px;
+        }
+
+        .policyList li {
+            color: #6f5846;
+            line-height: 2.1;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        @media(max-width:768px) {
+
+            .policyBox {
+                padding: 35px 25px;
+            }
+
+            .policyNav {
+                justify-content: center;
+            }
+
+            .policyNav a {
+                width: 100%;
+                text-align: center;
+            }
+
+        }
+
+        @media(max-width:992px) {
+
+            .policyHeader {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .policyHeading {
+                font-size: 32px;
+            }
+
+        }
+
+        /* ================================================= */
+        /* FOOTER */
+        /* ================================================= */
+
+        .footer {
+
+            background: #efe4d7;
+
+            padding-top: 70px;
+        }
+
+        /* TOP */
+
+        .footer-top {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 40px;
+
+            padding: 0 7% 60px;
+        }
+
+        /* COLUMN */
+
+        .footer-column h3 {
+
+            color: #7a4d27;
+
+            margin-bottom: 25px;
+
+            font-size: 22px;
+        }
+
+        .footer-column a {
+
+            display: block;
+
+            color: #6e5a4a;
+
+            margin-bottom: 15px;
+
+            transition: .3s;
+        }
+
+        .footer-column a:hover {
+
+            color: #d48d3b;
+        }
+
+        .footer-column p {
+
+            color: #6e5a4a;
+
+            line-height: 2;
+        }
+
+        /* NEWSLETTER */
+
+        .footer-newsletter {
+
+            display: flex;
+
+            margin-top: 20px;
+        }
+
+        .footer-newsletter input {
+
+            flex: 1;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 40px 0 0 40px;
+
+            outline: none;
+        }
+
+        .footer-newsletter button {
+
+            border: none;
+
+            background: #d48d3b;
+
+            color: #fff;
+
+            padding: 0 24px;
+
+            border-radius: 0 40px 40px 0;
+
+            cursor: pointer;
+        }
+
+        /* COPYRIGHT */
+
+        .footer-bottom {
+
+            border-top: 1px solid rgba(0, 0, 0, .08);
+
+            padding: 22px;
+
+            text-align: center;
+
+            color: #6e5a4a;
+        }
+
+        .footer-bottom span {
+
+            color: #d48d3b;
+
+            font-weight: 600;
+        }
+
+        /* ================================================= */
+        /* MOBILE */
+        /* ================================================= */
+
+        @media(max-width:992px) {
+
+            nav {
+
+                flex-wrap: wrap;
+
+                gap: 20px;
+            }
+
+            .logo-text {
+
+                font-size: 28px;
+            }
+
+            .nav-links {
+
+                width: 100%;
+
+                justify-content: center;
+            }
+
+            .custom-page-box h1 {
+
+                font-size: 42px;
+            }
+
+        }
+
+        @media(max-width:768px) {
+
+            .nav-links {
+
+                flex-wrap: wrap;
+
+                gap: 18px;
+            }
+
+            .logo-text {
+
+                font-size: 22px;
+            }
+
+            .custom-page-box {
+
+                padding: 50px 25px;
+            }
+
+            .custom-page-box h1 {
+
+                font-size: 34px;
+            }
+
+        }
+
+        /* ===================================================== */
+        /*  ABOUT BRAND */
+        /* ===================================================== */
+
+        .about-brand-section {
+
+            padding: 100px 7%;
+
+            background: #fff9f3;
+        }
+
+
+        .about-brand-container {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+
+        .about-brand-tag {
+
+            display: inline-block;
+
+            background: #f6dfbf;
+
+            color: #b07436;
+
+            padding: 10px 22px;
+
+            border-radius: 40px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            margin-bottom: 22px;
+        }
+
+
+
+        .about-brand-heading {
+
+            font-size: 54px;
+
+            line-height: 1.2;
+
+            color: #7a4d27;
+
+            margin-bottom: 28px;
+
+            font-family: 'Cinzel', serif;
+        }
+
+
+
+        .about-brand-text {
+
+            color: #7b624f;
+
+            line-height: 2;
+
+            margin-bottom: 24px;
+
+            font-size: 16px;
+        }
+
+
+
+        .about-brand-features {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 18px;
+
+            margin-top: 35px;
+
+            margin-bottom: 35px;
+        }
+
+        .about-brand-feature {
+
+            background: #fff;
+
+            padding: 16px 20px;
+
+            border-radius: 14px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+
+            color: #7a4d27;
+
+            font-weight: 600;
+        }
+
+        .about-brand-feature span {
+
+            color: #d48d3b;
+
+            margin-right: 8px;
+        }
+
+
+
+        .about-brand-btn {
+
+            display: inline-block;
+
+            background: #d48d3b;
+
+            color: #fff;
+
+            padding: 16px 34px;
+
+            border-radius: 40px;
+
+            text-decoration: none;
+
+            transition: .3s;
+        }
+
+        .about-brand-btn:hover {
+
+            background: #7a4d27;
+
+            transform: translateY(-4px);
+        }
+
+        /* ================= IMAGE ================= */
+
+        .about-brand-image-area {
+
+            position: relative;
+        }
+
+        .about-brand-image {
+
+            width: 100%;
+
+            border-radius: 30px;
+
+            object-fit: cover;
+
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .1);
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:992px) {
+
+            .about-brand-container {
+
+                grid-template-columns: 1fr;
+            }
+
+            .about-brand-heading {
+
+                font-size: 42px;
+            }
+
+        }
+
+        @media(max-width:768px) {
+
+            .about-brand-heading {
+
+                font-size: 34px;
+            }
+
+            .about-brand-features {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+
+
+        /* ===================================================== */
+        /* whats new */
+        /* ===================================================== */
+        /* ================= WHAT'S NEW ================= */
+
+
+        .wn-section {
+
+            padding: 100px 7%;
+
+            background: linear-gradient(to bottom, #fff9f3, #fff2e5);
+        }
+
+        /* ================= HEADING ================= */
+
+        .wn-heading-area {
+
+            text-align: center;
+
+            margin-bottom: 70px;
+        }
+
+        .wn-tag {
+
+            display: inline-block;
+
+            background: #f6dfbf;
+
+            color: #b07436;
+
+            padding: 10px 22px;
+
+            border-radius: 40px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            margin-bottom: 18px;
+        }
+
+        .wn-heading {
+
+            font-size: 56px;
+
+            color: #7a4d27;
+
+            font-family: 'Cinzel', serif;
+
+            margin-bottom: 15px;
+        }
+
+        .wn-subtext {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            color: #7b624f;
+
+            line-height: 2;
+
+            font-size: 17px;
+        }
+
+        /* ================= GRID ================= */
+
+        .wn-container {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+            gap: 35px;
+        }
+
+        /* ================= CARD ================= */
+
+        .wn-card {
+
+            background: #fff;
+
+            border-radius: 30px;
+
+            overflow: hidden;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+
+            transition: .4s;
+        }
+
+        .wn-card:hover {
+
+            transform: translateY(-10px);
+        }
+
+        /* ================= IMAGE ================= */
+
+        .wn-image-box {
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .wn-image {
+
+            width: 100%;
+
+            height: 420px;
+
+            object-fit: cover;
+
+            transition: .5s;
+        }
+
+        .wn-card:hover .wn-image {
+
+            transform: scale(1.08);
+        }
+
+        /* ================= BADGE ================= */
+
+        .wn-badge {
+
+            position: absolute;
+
+            top: 20px;
+
+            left: 20px;
+
+            background: #d48d3b;
+
+            color: #fff;
+
+            padding: 8px 16px;
+
+            border-radius: 40px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+        }
+
+        /* ================= CONTENT ================= */
+
+        .wn-content {
+
+            padding: 30px;
+        }
+
+        .wn-title {
+
+            color: #7a4d27;
+
+            font-size: 28px;
+
+            margin-bottom: 15px;
+        }
+
+        .wn-text {
+
+            color: #7b624f;
+
+            line-height: 1.9;
+
+            margin-bottom: 25px;
+        }
+
+        /* ================= BUTTON ================= */
+
+        .wn-btn {
+
+            display: inline-block;
+
+            background: #d48d3b;
+
+            color: #fff;
+
+            padding: 14px 28px;
+
+            border-radius: 40px;
+
+            text-decoration: none;
+
+            transition: .3s;
+        }
+
+        .wn-btn:hover {
+
+            background: #7a4d27;
+
+            transform: translateY(-3px);
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:768px) {
+
+            .wn-heading {
+
+                font-size: 40px;
+            }
+
+            .wn-image {
+
+                height: 340px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ================================================= -->
+    <!-- NAVBAR -->
+    <!-- ================================================= -->
+
+    <nav>
+
+        <!-- LOGO -->
+
+        <div class="logo-area">
+
+            <img src="logo.png" alt="Logo">
+            <a href="index.html" style="text-decoration:none; color:#7a4d27; font-weight:600;">SHYAM MORCHADI GARMENTS</a>
+
+            <!-- <div class="logo-text">
+        SHYAM MORCHHADI GARMENTS
+      </div> -->
+
+        </div>
+
+        <!-- NAV LINKS -->
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                HOME
+            </a>
+
+            <a href="collections.html">
+                COLLECTION
+            </a>
+
+            <a href="#read-more">
+                ABOUT
+            </a>
+
+            <a href="index.html#contact">
+                CONTACT
+            </a>
+
+        </div>
+
+        <!-- CART -->
+
+        <!-- <a href="collections.html"
+       class="cart-icon">
+
+      🛒 Cart
+
+    </a> -->
+
+    </nav>
+
+    <!-- ================================================= -->
+    <!-- EMPTY CONTENT your content goes here -->
+    <!-- ================================================= -->
+
+
+
+    <section class="policyMain">
+
+        <!-- Read More  -->
+        <div class="policyBox" id="read-more">
+
+            <h2 class="policyHeading">
+                About Shyam Morchhadi Garments
+            </h2>
+
+            <section class="about-brand-section" id="about">
+
+                <div class="about-brand-container">
+
+                    <!-- LEFT CONTENT -->
+
+                    <div class="about-brand-content">
+
+                        <span class="about-brand-tag">
+                            About Our Brand
+                        </span>
+
+                        <h2 class="about-brand-heading">
+
+                            Crafting Royal Elegance
+                            For Every Celebration
+
+                        </h2>
+
+                        <p class="about-brand-text">
+
+                            Welcome to
+                            <strong>SHYAM MORCHHADI GARMENTS</strong>,
+                            your trusted destination for premium ethnic wear
+                            sherwani fabrics in Surat.
+
+                            We specialize in luxurious wedding and ethnic fabric
+                            collections designed for modern royal fashion.
+                            From rich jacquard textures to elegant velvet and
+                            designer sherwani fabrics, every collection reflects
+                            style, tradition and craftsmanship.
+
+                        </p>
+
+                        <p class="about-brand-text">
+
+                            Our mission is to provide high-quality ethnic wear
+                            fabrics that help designers, retailers and customers
+                            create unforgettable wedding and festive looks.
+                            With a passion for fashion and excellence, we continue
+                            to bring trending and premium collections inspired by
+                            Indian royal heritage.
+
+                        </p>
+
+                        <!-- FEATURES -->
+
+                        <div class="about-brand-features">
+
+                            <div class="about-brand-feature">
+
+                                <span>
+                                    ✔
+                                </span>
+
+                                Premium Sherwani Fabrics
+
+                            </div>
+
+                            <div class="about-brand-feature">
+
+                                <span>
+                                    ✔
+                                </span>
+
+                                Latest Wedding Collections
+
+                            </div>
+
+                            <div class="about-brand-feature">
+
+                                <span>
+                                    ✔
+                                </span>
+
+                                Luxury Ethnic Wear Designs
+
+                            </div>
+
+                            <div class="about-brand-feature">
+
+                                <span>
+                                    ✔
+                                </span>
+
+                                Trusted Quality & Service
+
+                            </div>
+
+                        </div>
+
+                        <!-- BUTTON -->
+
+                        <a href="collections.html" class="about-brand-btn">
+
+                            Explore Collections
+
+                        </a>
+
+                    </div>
+
+                    <!-- RIGHT IMAGE -->
+
+                    <div class="about-brand-image-area">
+
+                        <img src="./logo.png" class="about-brand-image">
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+
+
+
+
+        </div>
+
+        <!-- What's New -->
+        <div class="policyBox" id="whats-new">
+
+            <div class="wn-heading-area">
+
+                <span class="wn-tag">
+                    Latest Collection
+                </span>
+
+                <h2 class="wn-heading">
+                    What's New
+                </h2>
+
+                <p class="wn-subtext">
+                    Discover our latest premium sherwani fabrics, luxury ethnic textures
+                    and trending wedding wear collections.
+                </p>
+
+            </div>
+
+            <div class="wn-container">
+
+                <!-- CARD 1 -->
+
+                <div class="wn-card">
+
+                    <div class="wn-image-box">
+
+                        <img src="./assets/product1.png" class="wn-image">
+
+                        <span class="wn-badge">
+                            NEW
+                        </span>
+
+                    </div>
+
+                    <div class="wn-content">
+
+                        <h3 class="wn-title">
+                            Royal Wedding Jacquard
+                        </h3>
+
+                        <p class="wn-text">
+                            Premium heavy jacquard sherwani fabrics with rich wedding
+                            embroidery patterns.
+                        </p>
+
+                        <a href="collections.html" class="wn-btn">
+                            Explore Collection
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD 2 -->
+
+                <div class="wn-card">
+
+                    <div class="wn-image-box">
+
+                        <img src="./assets/product3.png" class="wn-image">
+
+                        <span class="wn-badge">
+                            TRENDING
+                        </span>
+
+                    </div>
+
+                    <div class="wn-content">
+
+                        <h3 class="wn-title">
+                            Velvet Designer Fabric
+                        </h3>
+
+                        <p class="wn-text">
+                            Luxury velvet fabrics specially crafted for royal groom
+                            sherwani designs.
+                        </p>
+
+                        <a href="collections.html" class="wn-btn">
+                            View More
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD 3 -->
+
+                <div class="wn-card">
+
+                    <div class="wn-image-box">
+
+                        <img src="./assets/aboutimg.png" class="wn-image">
+
+                        <span class="wn-badge">
+                            HOT
+                        </span>
+
+                    </div>
+
+                    <div class="wn-content">
+
+                        <h3 class="wn-title">
+                            Imported Indo-Western Fabric
+                        </h3>
+
+                        <p class="wn-text">
+                            New indo-western ethnic wear textures with modern royal
+                            finishing.
+                        </p>
+
+                        <a href="collections.html" class="wn-btn">
+                            Shop Now
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================================================= -->
+    <!-- FOOTER -->
+    <!-- ================================================= -->
+
+    <footer class="footer">
+
+        <!-- TOP -->
+
+        <div class="footer-top">
+
+            <!-- COLUMN -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="collections.html">
+                    Collection
+                </a>
+
+                <a href="#read-more">
+                    About
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+                  <a href="#whats-new">
+                    what's new
+                </a>
+
+            </div>
+
+            <!-- COLUMN -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Policies
+                </h3>
+
+                <a href="policies.html#privacy-policy">
+                    Privacy Policy
+                </a>
+
+                <a href="policies.html#shipping-policy">
+                    Shipping Policy
+                </a>
+
+                <a href="policies.html#refund-policy">
+                    Refund Policy
+                </a>
+
+                <a href="policies.html#return-policy">
+                    Return Policy
+                </a>
+
+            </div>
+
+            <!-- COLUMN -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+
+                    1st Floor, Block-B,
+                    Shop No.-1134 & 1135 & 1136,
+                    Global Textile Market,
+                    Ring Road, Surat,
+                    Gujarat - 395010
+                    <p>
+                        <strong>Phone:</strong>
+                        +91 9374857246
+                    </p>
+
+                </p>
+
+            </div>
+
+            <!-- COLUMN -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Newsletter
+                </h3>
+
+                <p>
+
+                    Subscribe to get updates
+                    about latest collections.
+
+                </p>
+
+                <div class="footer-newsletter">
+
+                    <input type="email" placeholder="Your Email">
+
+                    <button>
+                        Subscribe
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- COPYRIGHT -->
+
+        <div class="footer-bottom">
+
+            © 2026
+            <span>
+                SHYAM MORCHHADI GARMENTS
+            </span>
+
+            | All Rights Reserved
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

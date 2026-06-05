@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending Collections | SHYAM MORCHADI GARMENTS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff9f3
+        }
+
+        .tc-header {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+            z-index: 99
+        }
+
+        .tc-home {
+            padding: 10px 16px;
+            background: #d48d3b;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px
+        }
+
+        .tc-title {
+            text-align: center;
+            color: #7a4d27
+        }
+
+        .tc-cart-btn {
+            cursor: pointer;
+            background: #7a4d27;
+            color: #fff;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 30px
+        }
+
+        .tc-hero {
+            text-align: center;
+            padding: 40px 20px
+        }
+
+        .tc-search {
+            display: block;
+            width: min(700px, 90%);
+            margin: 0 auto 25px;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 30px
+        }
+
+        .tc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            padding: 20px
+        }
+
+        .tc-card {
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .08)
+        }
+
+        .tc-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover
+        }
+
+        .tc-content {
+            padding: 15px
+        }
+
+        .tc-price {
+            color: #d48d3b;
+            font-weight: bold;
+            font-size: 22px
+        }
+
+        .tc-qty {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin: 12px 0
+        }
+
+        .tc-qty button,
+        .tc-add {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer
+        }
+
+        .tc-add {
+            width: 100%;
+            background: #d48d3b;
+            color: #fff
+        }
+
+        .tc-drawer {
+            position: fixed;
+            right: -420px;
+            top: 0;
+            width: 400px;
+            max-width: 100%;
+            height: 100%;
+            background: #fff;
+            transition: .3s;
+            z-index: 999;
+            padding: 15px;
+            box-shadow: -5px 0 20px rgba(0, 0, 0, .2);
+            display: flex;
+            flex-direction: column
+        }
+
+        .tc-drawer.open {
+            right: 0
+        }
+
+        .tc-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .4);
+            display: none;
+            z-index: 998
+        }
+
+        .tc-overlay.show {
+            display: block
+        }
+
+        .tc-items {
+            flex: 1;
+            overflow: auto
+        }
+
+        .tc-order {
+            background: #25D366;
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%
+        }
+
+        .tc-footer {
+            margin-top: 40px;
+            background: #f0e5d8;
+            padding: 30px;
+            text-align: center
+        }
+
+        .foot-bottom {
+            border-top: 1px solid #ddd2c4;
+            padding: 22px 7%;
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            background: #efe4d7;
+        }
+
+        .foot-bottom span {
+            color: #c58b48;
+            font-weight: 600;
+        }
+        .tc-cart-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:10px;
+}
+
+.tc-delete-btn{
+
+    background:#e74c3c;
+
+    color:#fff;
+
+    border:none;
+
+    padding:8px 14px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:13px;
+}
+
+.tc-delete-btn:hover{
+
+    opacity:.9;
+}
+.tc-clear-cart{
+
+    width:100%;
+
+    margin-bottom:10px;
+
+    background:#7a4d27;
+
+    color:#fff;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+}
+
+
+
+
+@media(max-width:768px){
+      .tc-home {
+        font-size: 12px;
+            padding: 4px 8px;
+            background: #d48d3b;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 15px
+        }
+         .tc-title {
+            font-size: 12px;
+        }
+        
+        .tc-cart-btn {
+            font-size: 12px;
+            cursor: pointer;
+            background: #bda795;
+            color: #fff;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 15px
+        }
+}
+    
+
+/* ================= LOADER ================= */
+
+.tc-loader-wrapper{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:80px 20px;
+
+    gap:20px;
+}
+
+.tc-loader{
+
+    width:70px;
+
+    height:70px;
+
+    border:6px solid #f3e1cd;
+
+    border-top:6px solid #d48d3b;
+
+    border-radius:50%;
+
+    animation:tcSpin 1s linear infinite;
+}
+
+/* TEXT */
+
+.tc-loader-wrapper p{
+
+    color:#7a4d27;
+
+    font-size:18px;
+
+    font-weight:600;
+}
+
+/* SPIN */
+
+@keyframes tcSpin{
+
+    0%{
+
+        transform:rotate(0deg);
+    }
+
+    100%{
+
+        transform:rotate(360deg);
+    }
+
+}
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="tc-header">
+        <a href="index.html" class="tc-home">← Back Home</a>
+        <h2 class="tc-title">SHYAM MORCHADI GARMENTS</h2>
+        <button class="tc-cart-btn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button>
+    </div>
+
+    <section class="tc-hero">
+        <h1>Trending Collections</h1>
+        <p>Premium Sherwani & Ethnic Wear Fabrics</p>
+    </section>
+
+    <input class="tc-search" id="search" placeholder="Search products...">
+<div id="tc-loader" class="tc-loader-wrapper">
+    <div class="tc-loader"></div>
+
+    <p>
+        Loading Premium Collections...
+    </p>
+
+</div>
+    <div id="products" class="tc-grid"></div>
+
+    <div class="tc-overlay" id="overlay" onclick="closeCart()"></div>
+
+    <div class="tc-drawer" id="drawer">
+        <h2>Shopping Cart</h2>
+        <div class="tc-items" id="cartItems"></div>
+        <h3>Total: ₹<span id="totalAmt">0</span></h3>
+        <button class="tc-clear-cart" onclick="clearCart()"> Clear Cart </button>
+        <button class="tc-order" onclick="whatsappOrder()">Order on WhatsApp</button>
+    </div>
+
+    <footer class="tc-footer">
+        <div class="foot-bottom">
+
+            © Copyright 2026 |
+            <span>
+                SHYAM MORCHADI GARMENTS
+            </span>
+            | All Rights Reserved. <br>
+            Developed By <span> <a href="https://backtick.in/" target="_blank">Anil Sharma</a></span>
+        </div>
+    </footer>
+
+    <script>
+        const API_URL = "https://script.google.com/macros/s/AKfycbw9p7KmoX_NBHthhbcltU9DxDfgYz_7BRnIdJJrrB8K_wScSTcKerc22ifkkMvbRjvo9w/exec";
+        let products = [];
+
+        let cart = JSON.parse(localStorage.getItem('tcCart') || '[]');
+
+        function saveCart() {
+            localStorage.setItem('tcCart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        async function loadProducts() {
+             document
+    .getElementById('tc-loader')
+    .style.display = 'flex';
+            try {
+                const res = await fetch(API_URL);
+                products = await res.json();
+                renderProducts(products);
+            } catch (e) {
+                document.getElementById('products').innerHTML = '<p>Unable to load products.</p>';
+            }
+             document
+    .getElementById('tc-loader')
+    .style.display = 'none';
+        }
+
+        function renderProducts(arr) {
+            const el = document.getElementById('products');
+            el.innerHTML = '';
+            arr.forEach(p => {
+                el.innerHTML += `
+  <div class="tc-card">
+    <img src="${p.image}" onerror="this.src='https://via.placeholder.com/400x300?text=Fabric'">
+    <div class="tc-content">
+      <small>${p.category || ''}</small>
+      <h3>${p.name}</h3>
+      <p>${p.description || ''}</p>
+      <div class="tc-price">₹${p.price}</div>
+      <div class="tc-qty">
+        <button onclick="changeQty(${p.id},-1)">-</button>
+        <span id="qty_${p.id}">1</span>
+        <button onclick="changeQty(${p.id},1)">+</button>
+      </div>
+      <button class="tc-add" onclick='addToCart(${JSON.stringify(p)})'>Add To Cart</button>
+    </div>
+  </div>`;
+            });
+        }
+
+        const qtyMap = {};
+        function changeQty(id, val) {
+            qtyMap[id] = (qtyMap[id] || 1) + val;
+            if (qtyMap[id] < 1) qtyMap[id] = 1;
+            document.getElementById('qty_' + id).textContent = qtyMap[id];
+        }
+
+        function addToCart(p) {
+            const q = qtyMap[p.id] || 1;
+            const ex = cart.find(x => x.id === p.id);
+            if (ex) ex.qty += q;
+            else cart.push({ ...p, qty: q });
+            saveCart();
+        }
+
+        function renderCart() {
+            document.getElementById('cartCount').textContent = cart.reduce((a, b) => a + b.qty, 0);
+            let total = 0;
+            const c = document.getElementById('cartItems');
+            c.innerHTML = '';
+            cart.forEach(i => {
+                total += i.qty * i.price;
+                // c.innerHTML += `<p><b>${i.name}</b><br>Qty:${i.qty} | ₹${i.price}</p><hr>`;
+                c.innerHTML += `
+<div class="tc-cart-row">
+
+    <p>
+        <b>${i.name}</b><br>
+        Qty: ${i.qty} | ₹${i.price}
+    </p>
+
+    <button
+        class="tc-delete-btn"
+        onclick="removeItem(${i.id})">
+
+        Remove
+
+    </button>
+
+</div>
+
+<hr>
+`;
+            });
+            document.getElementById('totalAmt').textContent = total;
+        }
+function removeItem(id){
+
+    cart = cart.filter(item => item.id !== id);
+
+    saveCart();
+
+}
+        function openCart() {
+            drawer.classList.add('open');
+            overlay.classList.add('show');
+        }
+        function closeCart() {
+            drawer.classList.remove('open');
+            overlay.classList.remove('show');
+        }
+function clearCart(){
+
+    if(confirm("Remove all items from cart?")){
+
+        cart = [];
+
+        saveCart();
+
+    }
+
+}
+        function whatsappOrder() {
+            if (!cart.length) { alert('Cart empty'); return; }
+            let msg = 'Hello SHYAM MORCHADI GARMENTS,%0A%0AOrder Details:%0A';
+            let total = 0;
+            cart.forEach((i, n) => {
+                total += i.qty * i.price;
+                msg += `${n + 1}. ${i.name} Qty:${i.qty} Price:₹${i.price}%0A`;
+            });
+            msg += `%0AGrand Total: ₹${total}`;
+            window.open('https://wa.me/919374857246?text=' + msg, '_blank');
+        }
+
+        search.onkeyup = e => {
+            const k = e.target.value.toLowerCase();
+            renderProducts(products.filter(p => (p.name || '').toLowerCase().includes(k) || (p.category || '').toLowerCase().includes(k)));
+        };
+
+        renderCart();
+        loadProducts();
+    </script>
+</body>
+
+</html>
